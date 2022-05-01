@@ -10,9 +10,25 @@
         font-family: Arial, Helvetica, sans-serif;
         font-size: 3em;
       }
+      time{
+          font-weight: bold;
+      }
+      #line{
+          background-color: black;
+          height: 0.5em;
+      }
     </style>
   </head>
   <body>
-    <h1>Rendering my first ever web page online.</h1>
+    {% for post in posts %}
+        <article>
+            <h2>
+                <a href="">{{post.title}}</a>
+            </h2>
+            <p>{{post.text|linebreaksbr}}</p>
+            <time>Published: {{post.create_date}}</time>
+            <p id = "line"></p>
+        </article>
+    {% endfor %}    
   </body>
 </html>
