@@ -18,3 +18,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title    
 
+class Sample(models.Model):
+    name = models.CharField(max_length=25)
+    place = models.CharField(max_length=25)
+    age = models.IntegerField()
+
+    def __str__(self):
+        return self.name
