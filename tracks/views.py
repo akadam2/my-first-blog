@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse 
+from .models import Tracks,Artist,Album,Genre
 
 # Create your views here.
 
 def tracks(request):
-    return HttpResponse("<h1>Welcome to tracks</h1>")
+    tracks = Tracks.objects.all()
+    return render(request,'tracks/tracks_list.html', {"tracks":tracks})
