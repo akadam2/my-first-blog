@@ -1,0 +1,17 @@
+header {
+  background-color: aqua;
+  margin-left: -15px;
+  margin-right: -8px;
+}
+header h1{
+    margin: 0px 0px 0px 20px;
+    font-size: 4em;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    padding: 0.25em;
+}
+
+body{
+    margin-top: 0px;
+    margin-left: 15px;
+}
