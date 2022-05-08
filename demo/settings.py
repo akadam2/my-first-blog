@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'tracks',
+    'horse',
+    'better_blog',
+    'users',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -119,7 +124,24 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR/'static'
+
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'better_blog:blog-home'
+LOGIN_URL = "users:login"
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('DEMO_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('DEMO_PASS')

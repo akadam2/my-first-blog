@@ -1,0 +1,9 @@
+
+{% extends 'tracks/base.html' %}
+{% block content %} 
+    <h3>Name: {{ track.name }}</h3>
+    <h3>Album: {{ track.album }}</h3>
+    <h3>Genre: {{ track.genre }}</h3>
+    <h4>This is the context variable {{context}}</h4>
+
+{% endblock %}

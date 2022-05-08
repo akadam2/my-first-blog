@@ -1,0 +1,20 @@
+
+{% extends 'better_blog/base.html' %}
+
+{% block content %}
+    <article class="media content-section">
+        <img class="rounded-circle article-img" src="{{ betterpost.author.profile.image.url }}" alt="">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="{% url 'better_blog:user-posts' betterpost.author.username %}">{{ betterpost.author }}</a>
+                <small class="text-muted">{{ betterpost.date_posted }}</small>
+                {% if object.author == user %}
+                    <a class="btn btn-secondary btn-sm mt-1" href="{% url 'better_blog:betterpost-update' betterpost.id %}">Update</a>
+                    <a class="btn btn-danger btn-sm mt-1" href="{% url 'better_blog:betterpost-delete' betterpost.id %}">Delete</a>
+                {% endif %}    
+            </div>
+            <h2 class="article-title" >{{ betterpost.title }}</h2>
+            <p class="article-content">{{ betterpost.content }}</p>
+        </div>
+    </article>
+{% endblock %}  

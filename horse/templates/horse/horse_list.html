@@ -1,0 +1,10 @@
+
+{% extends 'horse/base.html' %}
+
+{% block content%}
+    {% for horse in horse_list %}
+        <a href="{% url 'horse:horse_detail' pk=horse.pk %}"><h2>Name: {{horse.name}}</h2></a>
+        <h2>Height: {{horse.height}}</h2>
+        <h2>Color: {{horse.color}}</h2>
+    {% endfor %}    
+{% endblock %}
